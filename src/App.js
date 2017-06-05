@@ -55,7 +55,6 @@ var Modal = React.createClass({
 		
 		return (
 			<div className="Modal">
-				<Back></Back>
 				<Sign type='signIn'></Sign>
 				<Sign type='signUp'></Sign>
 			</div>
@@ -81,7 +80,12 @@ var App = React.createClass({
 		var child;
 		let test = 12;
 		if(this.state.mounted) {
-			child = (<Modal onSubmit={this.handleSubmit} testProp = {test} />);
+			child = (
+				<div className="App_test">
+					<Back></Back>
+					<Modal onSubmit={this.handleSubmit} testProp = {test} />
+				</div>
+			);
 		}
 		
 		return(

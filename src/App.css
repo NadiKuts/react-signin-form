@@ -20,16 +20,23 @@ body {
   top: 0;
   left: 0;
 }
-
+.App_test {
+  display: flex;
+  flex-direction: row-reverse;
+  box-shadow: 0 6px 10px 0px rgba(0, 0, 0, 0.5);
+  justify-content: flex-start;
+}
 .Modal {
   width: 700px;
   height: 500px;
   display: flex;
   flex-direction: row;
   box-shadow: 0 6px 10px 0px rgba(0, 0, 0, 0.5);
+  flex-grow: 5;
 }
 .Back {
   background-color: rgba(244, 246, 248, 0.98);
+  width: 80px;
   color: rgb(64, 70, 86);
   font-size: 30px;
   order: 1;
@@ -43,27 +50,35 @@ body {
   background-color: rgba(151, 105, 245, 0.98);
   color: rgb(218, 231, 241);
   font-size: 20px;
-  order: 3;
-  flex-grow: 4;
+  order: 1;
+  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: flex-grow .5s ease-out;
+  -moz-transition: flex-grow .5s ease-out;
+  -webkit-transition: flex-grow .5s ease-out;
+  -o-transition: flex-grow .5s ease-out;
 }
 .signUp:hover {
-  flex-grow: 5;
+  flex-grow: 2;
 }
 .signIn {
   background-color: rgba(64, 70, 86, 0.98);
   color: rgb(218, 231, 241);
   font-size: 20px;
-  order: 3;
-  flex-grow: 4;
+  order: 1;
+  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: flex-grow .5s ease-out;
+  -moz-transition: flex-grow .5s ease-out;
+  -webkit-transition: flex-grow .5s ease-out;
+  -o-transition: flex-grow .5s ease-out;
 }
 .signIn:hover {
-  flex-grow: 5;
+  flex-grow: 2;
   
 }
 .center {
