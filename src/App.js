@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import {MdAccountCircle, MdAddCircle, MdArrowBack, MdCancel} from 'react-icons/lib/md';
+import {MdAccountCircle, MdAddCircle, MdArrowBack, MdCancel, MdArrowForward} from 'react-icons/lib/md';
 
 var Input = React.createClass({
 	render: function() {
@@ -13,8 +13,7 @@ var Input = React.createClass({
 					required
 					type={this.props.type}
 					placeholder={this.props.placeholder}
-				/>	
-				<label htmlFor={this.props.name}></label>
+				/>
 			</div>
 		);
 	}
@@ -127,7 +126,6 @@ var SignCollapsed = React.createClass ({
 		return (
 			<div onClick={this.props.onChange} className={this.props.type=='signIn' ? 'signInCollapsed' : 'signUpCollapsed'}>
 				{icon}
-				<p> Collapsed</p>
 			</div>
 		);
 	}
@@ -137,7 +135,27 @@ var SignExpanded = React.createClass ({
 	render: function() {
 		return (
 			<div className={this.props.type=='signIn' ? 'signInExpanded' : 'signUpExpanded'}>
-				<p> Expanded</p>
+				<form>
+					<Input
+						id="login"
+						type="text"
+						placeholder="LOGIN" />
+					<Input
+						id="password"
+						type="password"
+						placeholder="PASSWORD" />
+					<SubmitButton type={this.props.type}></SubmitButton>
+				</form>
+			</div>
+		);
+	}
+});
+
+var SubmitButton = React.createClass({
+	render: function() {
+		return (
+			<div className={'submitButton'}>
+				<button className={this.props.type=='signIn' ? 'submitSignIn' : 'submitSignUp'}><MdArrowForward/></button>
 			</div>
 		);
 	}
