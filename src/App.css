@@ -62,6 +62,7 @@ body {
 }
 .signIn:hover {
   flex-grow: 2;
+  cursor: pointer;
 }
 .signInCollapsed {
   background-color: rgba(151, 105, 245, 0.98);
@@ -136,7 +137,7 @@ body {
 }
 .signUp:hover {
   flex-grow: 2;
-  
+  cursor: pointer;
 }
 .center {
   display: flex;
@@ -205,16 +206,35 @@ body {
 }
 .submitButton {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
   width: 100%;
 }
-
+.socialNets {
+  flex-grow: 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 50px;
+}
+.socialNetsIcon {
+  margin-right: 30px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.socialNetsIcon:hover {
+  opacity: 1;
+}
+.forgotPass {
+  color: #e0d1ff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 50px;
+}
 button {
-  right: 0;
-  border: 0;
+  right: 0; 
+  border: 0; 
   border-radius: 18px;
   color: white;
-  display: flex;
   font-family: "Lato", sans-serif;
   font-size: 23px;
   font-weight: 500;
@@ -227,9 +247,11 @@ button {
 }
 .submitSignIn {
   background: rgba(102, 58, 173, 0.8);
+  cursor: pointer;
 }
 .submitSignUp {
   background: rgba(43, 46, 56, 0.8);
+  cursor: pointer;
 }
 button .fa {
   font-size: 12px;

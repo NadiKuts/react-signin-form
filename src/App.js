@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {MdAccountCircle, MdAddCircle, MdArrowBack, MdCancel, MdArrowForward, MdVisibility} from 'react-icons/lib/md';
+import {FaGooglePlus, FaTwitter, FaFacebook} from 'react-icons/lib/fa';
 
 var Input = React.createClass({	
 	render: function() {
@@ -153,6 +154,7 @@ var SignExpanded = React.createClass ({
 						type="password"
 						placeholder="PASSWORD" />
 					<SubmitButton type={this.props.type}></SubmitButton>
+					<a href="url" className='forgotPass'>{this.props.type == 'signIn' ? 'Forgot password?' : ''}</a>
 				</form>
 			</div>
 		);
@@ -161,8 +163,24 @@ var SignExpanded = React.createClass ({
 
 var SubmitButton = React.createClass({
 	render: function() {
+		var socialNets = null;
+		if (this.props.type == 'signIn') {
+			socialNets = (
+				<div className='socialNets'>
+					<FaGooglePlus className='socialNetsIcon'/>
+					<FaTwitter className='socialNetsIcon'/>
+					<FaFacebook className='socialNetsIcon'/>
+				</div>
+			)
+		} else {
+			socialNets = (
+				<div className='socialNets'>
+				</div>
+			)
+		}
 		return (
 			<div className={'submitButton'}>
+				{socialNets}
 				<button className={this.props.type=='signIn' ? 'submitSignIn' : 'submitSignUp'}><MdArrowForward/></button>
 			</div>
 		);
