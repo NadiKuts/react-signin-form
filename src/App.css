@@ -46,7 +46,7 @@ body {
   justify-content: center;
 }
 
-.signUp {
+.signIn {
   background-color: rgba(151, 105, 245, 0.98);
   color: rgb(218, 231, 241);
   font-size: 20px;
@@ -60,53 +60,11 @@ body {
   -webkit-transition: flex-grow .5s ease-out;
   -o-transition: flex-grow .5s ease-out;
 }
-.signUp:hover {
+.signIn:hover {
   flex-grow: 2;
 }
-.signUpCollapsed {
-  background-color: rgba(151, 105, 245, 0.98);
-  color: rgb(218, 231, 241);
-  font-size: 20px;
-  order: 1;
-  flex-grow: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  transition: flex-grow .5s ease-out;
-  -moz-transition: flex-grow .5s ease-out;
-  -webkit-transition: flex-grow .5s ease-out;
-  -o-transition: flex-grow .5s ease-out;
-}
-.signUpExpanded {
-  background-color: rgba(151, 105, 245, 0.98);
-  color: rgb(218, 231, 241);
-  font-size: 20px;
-  order: 1;
-  flex-grow: 8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: flex-grow .5s ease-out;
-  -moz-transition: flex-grow .5s ease-out;
-  -webkit-transition: flex-grow .5s ease-out;
-  -o-transition: flex-grow .5s ease-out;
-}
-.signIn {
-  background-color: rgba(64, 70, 86, 0.98);
-  color: rgb(218, 231, 241);
-  font-size: 20px;
-  order: 1;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: flex-grow .5s ease-out;
-  -moz-transition: flex-grow .5s ease-out;
-  -webkit-transition: flex-grow .5s ease-out;
-  -o-transition: flex-grow .5s ease-out;
-}
 .signInCollapsed {
-  background-color: rgba(64, 70, 86, 0.98);
+  background-color: rgba(151, 105, 245, 0.98);
   color: rgb(218, 231, 241);
   font-size: 20px;
   order: 1;
@@ -120,6 +78,49 @@ body {
   -o-transition: flex-grow .5s ease-out;
 }
 .signInExpanded {
+  background-color: rgba(151, 105, 245, 0.98);
+  color: rgb(218, 231, 241);
+  font-size: 20px;
+  order: 1;
+  flex-grow: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: flex-grow .5s ease-out;
+  -moz-transition: flex-grow .5s ease-out;
+  -webkit-transition: flex-grow .5s ease-out;
+  -o-transition: flex-grow .5s ease-out;
+}
+.signUp {
+  background-color: rgba(64, 70, 86, 0.98);
+  color: rgb(218, 231, 241);
+  font-size: 20px;
+  order: 1;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: flex-grow .5s ease-out;
+  -moz-transition: flex-grow .5s ease-out;
+  -webkit-transition: flex-grow .5s ease-out;
+  -o-transition: flex-grow .5s ease-out;
+}
+.signUpCollapsed {
+  background-color: rgba(64, 70, 86, 0.98);
+  color: rgb(218, 231, 241);
+  font-size: 20px;
+  order: 1;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transition: flex-grow .5s ease-out;
+  -moz-transition: flex-grow .5s ease-out;
+  -webkit-transition: flex-grow .5s ease-out;
+  -o-transition: flex-grow .5s ease-out;
+}
+.signUpExpanded {
   background-color: rgba(64, 70, 86, 0.98);
   color: rgb(218, 231, 241);
   font-size: 20px;
@@ -133,7 +134,7 @@ body {
   -webkit-transition: flex-grow .5s ease-out;
   -o-transition: flex-grow .5s ease-out;
 }
-.signIn:hover {
+.signUp:hover {
   flex-grow: 2;
   
 }
@@ -147,12 +148,19 @@ body {
   font-size: 75px;
 }
 .iconsCollapsed {
-  font-size: 30px;
+  font-size: 35px;
   margin-top: 30px;
   opacity: 0.8;
 }
 .logForm {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   width: 60%;
+}
+.logForm h2 {
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 .Input {
   display: flex;
@@ -212,10 +220,10 @@ button {
   width: 30%;
 }
 .submitSignIn {
-  background: rgba(87, 82, 92, 0.8);
+  background: rgba(146, 95, 230, 0.8);
 }
 .submitSignUp {
-  background: rgba(146, 95, 230, 0.8);
+  background: rgba(87, 82, 92, 0.8);
 }
 button .fa {
   font-size: 12px;

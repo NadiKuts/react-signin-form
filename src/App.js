@@ -85,22 +85,22 @@ var Modal = React.createClass({
 		if (this.state.wasClickedLeft == false && this.state.wasClickedRight == false) {
 			modalContent = (
 				<div className='Modal'>
-					<Sign type='signUp' onChange={this.onClickLeft}></Sign>
-					<Sign type='signIn' onChange={this.onClickRight}></Sign>
+					<Sign type='signIn' onChange={this.onClickLeft}></Sign>
+					<Sign type='signUp' onChange={this.onClickRight}></Sign>
 				</div>
 			);
 		} else if (this.state.wasClickedLeft == false && this.state.wasClickedRight == true) {
 			modalContent = (
 				<div className='Modal'>
-					<SignCollapsed type='signUp' onChange={this.onClickLeft}></SignCollapsed>
-					<SignExpanded type='signIn' ></SignExpanded>
+					<SignCollapsed type='signIn' onChange={this.onClickLeft}></SignCollapsed>
+					<SignExpanded type='signUp' ></SignExpanded>
 				</div>
 			);
 		} else if (this.state.wasClickedLeft == true && this.state.wasClickedRight == false) {
 			modalContent = (
 				<div className='Modal'>
-					<SignExpanded type='signUp' ></SignExpanded>
-					<SignCollapsed type='signIn' onChange={this.onClickRight}></SignCollapsed>
+					<SignExpanded type='signIn' ></SignExpanded>
+					<SignCollapsed type='signUp' onChange={this.onClickRight}></SignCollapsed>
 				</div>
 			);
 		}
@@ -136,6 +136,7 @@ var SignExpanded = React.createClass ({
 		return (
 			<div className={this.props.type=='signIn' ? 'signInExpanded' : 'signUpExpanded'}>
 				<form className='logForm'>
+					<h2>{this.props.type == 'signIn' ? 'SIGN IN' : 'SIGN UP'}</h2>
 					<Input
 						id="login"
 						type="text"
