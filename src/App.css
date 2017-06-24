@@ -164,7 +164,7 @@ body {
 }
 .Input {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   border-bottom: 1px solid rgba(255, 252, 232, 0.1);
   padding: 10px;
   margin-bottom: 15px;
@@ -196,7 +196,13 @@ body {
 .Input input[type='password'] ~ label::before {
   content: "\f023";
 }
-
+.iconVisibility {
+  opacity: 0.7;
+}
+.iconVisibility:hover {
+  opacity: 1;
+  cursor:pointer;
+}
 .submitButton {
   display: flex;
   justify-content: flex-end;
@@ -220,10 +226,10 @@ button {
   width: 30%;
 }
 .submitSignIn {
-  background: rgba(146, 95, 230, 0.8);
+  background: rgba(102, 58, 173, 0.8);
 }
 .submitSignUp {
-  background: rgba(87, 82, 92, 0.8);
+  background: rgba(43, 46, 56, 0.8);
 }
 button .fa {
   font-size: 12px;

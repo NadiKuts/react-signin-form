@@ -1,10 +1,16 @@
 import React from 'react';
 import './App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import {MdAccountCircle, MdAddCircle, MdArrowBack, MdCancel, MdArrowForward} from 'react-icons/lib/md';
+import {MdAccountCircle, MdAddCircle, MdArrowBack, MdCancel, MdArrowForward, MdVisibility} from 'react-icons/lib/md';
 
-var Input = React.createClass({
+var Input = React.createClass({	
 	render: function() {
+		let iconVisibility = null;
+		if (this.props.type == 'password') {
+			iconVisibility = (
+				<MdVisibility className='iconVisibility'/>
+			);
+		}
 		return (
 			<div className="Input">
 				<input 
@@ -14,6 +20,7 @@ var Input = React.createClass({
 					type={this.props.type}
 					placeholder={this.props.placeholder}
 				/>
+				{iconVisibility}
 			</div>
 		);
 	}
