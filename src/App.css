@@ -151,11 +151,14 @@ body {
   margin-top: 30px;
   opacity: 0.8;
 }
+.logForm {
+  width: 60%;
+}
 .Input {
   display: flex;
   flex-direction: row-reverse;
   border-bottom: 1px solid rgba(255, 252, 232, 0.1);
-  padding-bottom: 3px;
+  padding: 10px;
   margin-bottom: 15px;
   color: #FFFCE8;
   text-transform: uppercase;
@@ -176,6 +179,9 @@ body {
 .Input input[type='text'] ~ label::before {
   content: "\f007";
 }
+.Input input::-webkit-input-placeholder{
+  color: #FFFFFF;
+}
 .Input input[type='email'] ~ label::before {
   content: "\f1fa";
 }
@@ -186,6 +192,7 @@ body {
 .submitButton {
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 }
 
 button {
@@ -202,7 +209,7 @@ button {
   outline: none;
   padding: 5px;
   text-transform: uppercase;
-  width: 70%;
+  width: 30%;
 }
 .submitSignIn {
   background: rgba(87, 82, 92, 0.8);

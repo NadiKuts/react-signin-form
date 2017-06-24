@@ -135,7 +135,7 @@ var SignExpanded = React.createClass ({
 	render: function() {
 		return (
 			<div className={this.props.type=='signIn' ? 'signInExpanded' : 'signUpExpanded'}>
-				<form>
+				<form className='logForm'>
 					<Input
 						id="login"
 						type="text"
