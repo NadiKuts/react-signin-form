@@ -1,11 +1,15 @@
-@import "https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900";
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+html {
+  font-family: "Roboto Condensed", sans-serif;
+}
 body {
   background-image: url('../winter_mountains.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #3E363F;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   height: 100vh;
   overflow: hidden;
 }
@@ -49,6 +53,7 @@ body {
 .signIn {
   background-color: rgba(151, 105, 245, 0.98);
   color: rgb(218, 231, 241);
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 20px;
   order: 1;
   flex-grow: 1;
@@ -81,6 +86,7 @@ body {
 .signInExpanded {
   background-color: rgba(151, 105, 245, 0.98);
   color: rgb(218, 231, 241);
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 20px;
   order: 1;
   flex-grow: 8;
@@ -96,6 +102,7 @@ body {
 .signUp {
   background-color: rgba(64, 70, 86, 0.98);
   color: rgb(218, 231, 241);
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 20px;
   order: 1;
   flex-grow: 1;
@@ -124,6 +131,7 @@ body {
 .signUpExpanded {
   background-color: rgba(64, 70, 86, 0.98);
   color: rgb(218, 231, 241);
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 20px;
   order: 1;
   flex-grow: 8;
@@ -177,7 +185,7 @@ body {
   border: 0;
   color: #FFFCE8;
   background: transparent;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   flex: 1 0 auto;
   font-size: 14px;
   font-weight: 300;
@@ -235,7 +243,7 @@ button {
   border: 0; 
   border-radius: 18px;
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 23px;
   font-weight: 500;
   justify-content: center;
