@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {MdAccountCircle, MdAddCircle, MdArrowBack, MdCancel, MdArrowForward, MdVisibility} from 'react-icons/lib/md';
-import {FaGooglePlus, FaTwitter, FaFacebook} from 'react-icons/lib/fa';
+import {FaGooglePlus, FaTwitter, FaFacebook, FaCircle} from 'react-icons/lib/fa';
 import {Motion, spring} from 'react-motion';
 
 var Input = React.createClass({	
@@ -27,24 +27,17 @@ var Input = React.createClass({
 		);
 	}
 });
-var Back = React.createClass({
-	// getInitialState: function() {
-	// 	return {
-	// 		open: false,
-	// 	}
-	// },
-	// componentDidMount: function () {
-	// 	this.setState({open: !this.state.open});
-	// },
+var NavigationPanel = React.createClass({
 	render: function() {
 		return (
-			<div onClick={this.props.initialState} className='Back'>
-				{/* <Motion style={{x: spring(this.state.open ? 1 : 0.1,{stiffness: 10, damping: 17})}}>
-					{({x}) =>
-						<MdArrowBack style={{opacity: `${x}`}}/>
-          }
-				</Motion> */}
-				<MdArrowBack />
+			<div className='NavigationPanel'>
+				<MdArrowBack onClick={this.props.initialState} className='back'/>
+				<div className='dots'>
+					<FaCircle className='dotSelected' />
+					<FaCircle className='dot' />
+					<FaCircle className='dot' />
+				</div>
+				<div style={{flex: 2}}></div>
 			</div>
 		)
 	}
@@ -152,24 +145,35 @@ var SignCollapsed = React.createClass ({
 var SignExpanded = React.createClass ({
 	getInitialState: function() {
 		return {
-			open: false
+			flexState: false,
+			animIsFinished: false
 		}
 	},
 	componentDidMount: function() {
-     this.setState({open: !this.state.open});  
+     this.setState({flexState: !this.state.flexState});  
   },
+	
+	isFinished: function(){
+		this.setState({animIsFinished: true});
+	},
 	
 	render: function() {
 		return (
-			<div className={this.props.type=='signIn' ? 'signInExpanded' : 'signUpExpanded'}>
+			<Motion style={{
+				flexVal: spring(this.state.flexState ? 8 : 1)
+			}} onRest={this.isFinished}>
+			{({flexVal}) =>
+			<div className={this.props.type=='signIn' ? 'signInExpanded' : 'signUpExpanded'} style={{
+				flexGrow: `${flexVal}`
+			}}>
 				<Motion style={{ 
-					opacity: spring(this.state.open ? 1 : 0.1, {stiffness: 120, damping: 17}),
-					y: spring(this.state.open ? 0 : 20, {stiffness: 120, damping: 17})
+					opacity: spring(this.state.flexState ? 1 : 0,{stiffness: 300, damping: 17}),
+					y: spring(this.state.flexState ? 0 : 50, {stiffness: 100, damping: 17})
 				 }} >
 						{({opacity, y}) =>
 						<form className='logForm' style={{
 							WebkitTransform: `translate3d(0, ${y}px, 0)`,
-              transform: `translate3d(0, ${y}px, 0)`,
+							transform: `translate3d(0, ${y}px, 0)`,
 							opacity: `${opacity}`
 						}}>
 							<h2>{this.props.type == 'signIn' ? 'SIGN IN' : 'SIGN UP'}</h2>
@@ -184,9 +188,12 @@ var SignExpanded = React.createClass ({
 							<SubmitButton type={this.props.type}></SubmitButton>
 							<a href="url" className='forgotPass'>{this.props.type == 'signIn' ? 'Forgot password?' : ''}</a>
 						</form>
-	          }
+						}
 				</Motion>
 			</div>
+		}
+				
+			</Motion>
 		);
 	}
 });
@@ -237,7 +244,7 @@ var App = React.createClass({
 		if(this.state.mounted) {
 			child = (
 				<div className="App_test">
-					<Back></Back>
+					<NavigationPanel></NavigationPanel>
 					<Modal onSubmit={this.handleSubmit} testProp = {test} />
 				</div>
 			);
