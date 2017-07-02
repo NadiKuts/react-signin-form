@@ -3,6 +3,7 @@ import './App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {MdAccountCircle, MdAddCircle, MdArrowBack, MdCancel, MdArrowForward, MdVisibility} from 'react-icons/lib/md';
 import {FaGooglePlus, FaTwitter, FaFacebook} from 'react-icons/lib/fa';
+import {Motion, spring} from 'react-motion';
 
 var Input = React.createClass({	
 	render: function() {
@@ -27,13 +28,23 @@ var Input = React.createClass({
 	}
 });
 var Back = React.createClass({
-	initialState: function() {
-		
-	},
+	// getInitialState: function() {
+	// 	return {
+	// 		open: false,
+	// 	}
+	// },
+	// componentDidMount: function () {
+	// 	this.setState({open: !this.state.open});
+	// },
 	render: function() {
 		return (
 			<div onClick={this.props.initialState} className='Back'>
-				<MdArrowBack/>
+				{/* <Motion style={{x: spring(this.state.open ? 1 : 0.1,{stiffness: 10, damping: 17})}}>
+					{({x}) =>
+						<MdArrowBack style={{opacity: `${x}`}}/>
+          }
+				</Motion> */}
+				<MdArrowBack />
 			</div>
 		)
 	}
@@ -87,7 +98,6 @@ var Modal = React.createClass({
 		});
 	},
 	render: function() {
-		let test = 1;
 		let modalContent = null;
 		
 		if (this.state.wasClickedLeft == false && this.state.wasClickedRight == false) {
@@ -140,22 +150,42 @@ var SignCollapsed = React.createClass ({
 });
 
 var SignExpanded = React.createClass ({
+	getInitialState: function() {
+		return {
+			open: false
+		}
+	},
+	componentDidMount: function() {
+     this.setState({open: !this.state.open});  
+  },
+	
 	render: function() {
 		return (
 			<div className={this.props.type=='signIn' ? 'signInExpanded' : 'signUpExpanded'}>
-				<form className='logForm'>
-					<h2>{this.props.type == 'signIn' ? 'SIGN IN' : 'SIGN UP'}</h2>
-					<Input
-						id="login"
-						type="text"
-						placeholder="LOGIN" />
-					<Input
-						id="password"
-						type="password"
-						placeholder="PASSWORD" />
-					<SubmitButton type={this.props.type}></SubmitButton>
-					<a href="url" className='forgotPass'>{this.props.type == 'signIn' ? 'Forgot password?' : ''}</a>
-				</form>
+				<Motion style={{ 
+					opacity: spring(this.state.open ? 1 : 0.1, {stiffness: 120, damping: 17}),
+					y: spring(this.state.open ? 0 : 20, {stiffness: 120, damping: 17})
+				 }} >
+						{({opacity, y}) =>
+						<form className='logForm' style={{
+							WebkitTransform: `translate3d(0, ${y}px, 0)`,
+              transform: `translate3d(0, ${y}px, 0)`,
+							opacity: `${opacity}`
+						}}>
+							<h2>{this.props.type == 'signIn' ? 'SIGN IN' : 'SIGN UP'}</h2>
+							<Input
+								id="login"
+								type="text"
+								placeholder="LOGIN" />
+							<Input
+								id="password"
+								type="password"
+								placeholder="PASSWORD" />
+							<SubmitButton type={this.props.type}></SubmitButton>
+							<a href="url" className='forgotPass'>{this.props.type == 'signIn' ? 'Forgot password?' : ''}</a>
+						</form>
+	          }
+				</Motion>
 			</div>
 		);
 	}
