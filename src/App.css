@@ -113,7 +113,6 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 20px;
   order: 1;
-  /*flex-grow: 8;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,7 +160,6 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 20px;
   order: 1;
-  /*flex-grow: 8;*/
   display: flex;
   align-items: center;
   justify-content: center;
