@@ -1,4 +1,4 @@
-# User Interface No.1. SignIn/SignUp Form
+# SignIn/SignUp Form Concept
 Simple animated logIn form
 
 Inspired by https://www.uplabs.com/posts/sign-in-and-sign-out
@@ -6,9 +6,9 @@ Inspired by https://www.uplabs.com/posts/sign-in-and-sign-out
 ### Instructions
 - Clone repository: `git clone https://github.com/NadiKuts/UI_1_LogIn.git`
 
-- Install dependencies: `npm install`
-
 - Navigate to the created folder: `cd UI_1_LogIn`
+
+- Install dependencies: `npm install`
 
 - Start the project `npm start`
 
