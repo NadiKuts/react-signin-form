@@ -1,5 +1,5 @@
 # SignIn/SignUp Form Concept
-Simple animated logIn form
+Simple animated logIn form developed by using ReactJS
 
 Inspired by https://www.uplabs.com/posts/sign-in-and-sign-out
 
