@@ -20,3 +20,6 @@ https://github.com/chenglou/react-motion
 React Daily UI
 
 https://github.com/fullstackreact/react-daily-ui
+
+### License
+MIT License
