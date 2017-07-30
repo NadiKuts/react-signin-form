@@ -3,6 +3,11 @@ Simple animated logIn form developed by using ReactJS
 
 Inspired by https://www.uplabs.com/posts/sign-in-and-sign-out
 
+|      Original design      |  Implementation         |
+| ------------------------- |:-----------------------:|
+| ![Output sample](preview.gif)|![Output sample](logIn.gif) |
+
+
 ### Instructions
 - Clone repository: `git clone https://github.com/NadiKuts/UI_1_LogIn.git`
 
