@@ -9,9 +9,9 @@ Inspired by https://www.uplabs.com/posts/sign-in-and-sign-out
 
 
 ### Instructions
-- Clone repository: `git clone https://github.com/NadiKuts/UI_1_LogIn.git`
+- Clone repository: `git clone https://github.com/NadiKuts/LogInForm.git`
 
-- Navigate to the created folder: `cd UI_1_LogIn`
+- Navigate to the created folder: `cd LogInForm`
 
 - Install dependencies: `npm install`
 
@@ -28,6 +28,3 @@ https://github.com/fullstackreact/react-daily-ui
 
 ### License
 MIT License
-
-
-![Output sample](https://media.giphy.com/media/hzfInooURjtsc/giphy.gif)
