@@ -1,28 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {Motion, spring} from 'react-motion';
 import NavigationPanel from './components/NavigationPanel';
 import Modal from './components/Modal';
 
-var App = React.createClass({
-	getInitialState: function() {
-		return { mounted: false };
-	},
-	
-	componentDidMount: function() {
+class App extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			mounted: false
+		};
+	}
+
+	componentDidMount() {
 		this.setState({ mounted: true });
-	},
+	}
 	
-	handleSubmit: function(e) {
+	handleSubmit = (e) => {
 		this.setState({ mounted: false });
 		e.preventDefault();
-	},
+	}
 
-	render: function() {
-		var child;
+	render() {
+		const {mounted} = this.state;
+
+		let child;
 		let test = 12;
-		if(this.state.mounted) {
+
+		if(mounted) {
 			child = (
 				<div className="App_test">
 					<NavigationPanel></NavigationPanel>
@@ -42,6 +49,6 @@ var App = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
 export default App;

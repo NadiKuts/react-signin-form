@@ -1,41 +1,45 @@
-import React from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import '../App.css';
 import Sign from './Sign';
 import SignExpanded from './SignExpanded';
 import SignCollapsed from './SignCollapsed';
 
-var Modal = React.createClass({
-	propTypes: {
-		onSubmit: React.PropTypes.func
-	},
-	getInitialState: function() {
-		return {
+class Modal extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
 			wasClickedLeft: false,
 			wasClickedRight: false,
-		}
-	},
-	onReset: function() {
+		};
+	}
+
+	onReset = () => {
 		this.setState({
 			wasClickedLeft: false,
 			wasClickedRight: false
 		})
-	},
-	onClickLeft: function() {
+	}
+
+	onClickLeft = () =>{
 		this.setState({wasClickedLeft: !this.state.wasClickedLeft}, function() {
 			if (this.state.wasClickedRight == true && this.state.wasClickedLeft == true) {
 				this.setState({wasClickedRight: false});
 			};
 		});
 		
-	},
-	onClickRight: function() {
+	}
+
+	onClickRight = () => {
 		this.setState({wasClickedRight: !this.state.wasClickedRight}, function(){
 			if (this.state.wasClickedRight == true && this.state.wasClickedLeft == true) {
 				this.setState({wasClickedLeft: false});
 			};
 		});
-	},
-	render: function() {
+	}
+
+	render () {
 		let modalContent = null;
 		
 		if (this.state.wasClickedLeft == false && this.state.wasClickedRight == false) {
@@ -60,12 +64,18 @@ var Modal = React.createClass({
 				</div>
 			);
 		}
+		
 		return (
 			<div className="Modal">
 				{modalContent}
 			</div>
 		);
 	}
-});
+
+}
+
+Modal.propTypes = {
+	onSubmit: PropTypes.func
+};
 
 export default Modal;
