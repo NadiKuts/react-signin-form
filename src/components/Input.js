@@ -1,33 +1,37 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../App.css';
 import {MdVisibility} from 'react-icons/lib/md';
 
-var Input = React.createClass({
-	propTypes: {
-		id: React.PropTypes.string,
-		type: React.PropTypes.string,
-		placeholer: React.PropTypes.string
-	},
-	render: function() {
-		let iconVisibility = null;
-		if (this.props.type == 'password') {
-			iconVisibility = (
-				<MdVisibility className='iconVisibility'/>
-			);
-		}
-		return (
-			<div className="Input">
-				<input 
-					id={this.props.name}
-					autoComplete="false"
-					required
-					type={this.props.type}
-					placeholder={this.props.placeholder}
-				/>
-				{iconVisibility}
-			</div>
+const Input = (props) => {
+
+	let iconVisibility = null;
+
+	if (props.type == 'password') {
+		iconVisibility = (
+			<MdVisibility className='iconVisibility'/>
 		);
 	}
-});
+
+	return (
+		<div className="Input">
+			<input 
+				id={props.name}
+				autoComplete="false"
+				required
+				type={props.type}
+				placeholder={props.placeholder}
+			/>
+			{iconVisibility}
+		</div>
+	);
+}
+
+Input.propTypes = {
+	id: PropTypes.string,
+	type: PropTypes.string,
+	placeholer: PropTypes.string
+};
+
 
 export default Input;

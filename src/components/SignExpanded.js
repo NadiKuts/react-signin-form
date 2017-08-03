@@ -1,28 +1,30 @@
-import React from 'react';
+import React , {Component} from 'react';
+import PropTypes from 'prop-types';
 import '../App.css';
 import {Motion, spring} from 'react-motion';
 import Input from './Input';
 import SubmitButton from './SubmitButton';
 
-var SignExpanded = React.createClass ({
-	propTypes: {
-		type: React.PropTypes.string
-	},
-	getInitialState: function() {
-		return {
+class SignExpanded extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
 			flexState: false,
 			animIsFinished: false
-		}
-	},
-	componentDidMount: function() {
-     this.setState({flexState: !this.state.flexState});  
-  },
-	
-	isFinished: function(){
+		};
+	}
+
+	componentDidMount () {
+     	this.setState({flexState: !this.state.flexState});  
+  	}
+
+
+	isFinished = () => {
 		this.setState({animIsFinished: true});
-	},
-	
-	render: function() {
+	}
+
+	render () {
 		return (
 			<Motion style={{
 				flexVal: spring(this.state.flexState ? 8 : 1)
@@ -60,6 +62,11 @@ var SignExpanded = React.createClass ({
 			</Motion>
 		);
 	}
-});
+
+}
+
+SignExpanded.PropTypes ={
+	type: PropTypes.string	
+};
 
 export default SignExpanded;
