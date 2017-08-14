@@ -9,9 +9,9 @@ Inspired by https://www.uplabs.com/posts/sign-in-and-sign-out
 
 
 ### Instructions
-- Clone repository: `git clone https://github.com/NadiKuts/LogInForm.git`
+- Clone repository: `git clone https://github.com/NadiKuts/react-signin-form.git`
 
-- Navigate to the created folder: `cd LogInForm`
+- Navigate to the created folder: `cd react-signin-form`
 
 - Install dependencies: `npm install`
 
